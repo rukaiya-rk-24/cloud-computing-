@@ -1,0 +1,21 @@
+runtime: python39  # Using Python 3.9 as the runtime environment
+
+instance_class: F2  # Specifying an instance class
+
+handlers:
+- url: /static  # Configuring handler for static files
+  static_dir: static
+  
+- url: /.*  # Configuring handler for the application
+  script: auto
+  
+env_variables:  # Environment variables
+  CLOUD_STORAGE_BUCKET: "staging.upload-image-ecdc0.appspot.com"
+
+automatic_scaling:  # Optional: configure scaling behavior
+  min_instances: 1
+  max_instances: 5
+  target_cpu_utilization: 0.6
+
+error_handlers:  # Optional: custom error handling
+- file: default_error.html

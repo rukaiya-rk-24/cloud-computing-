@@ -1,0 +1,4 @@
+Flask==2.0.1
+google-cloud-storage==1.42.0
+google-cloud-firestore==2.3.3
+Werkzeug==2.0.2
